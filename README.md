@@ -1,6 +1,7 @@
 # 🫀 HeartSafe ML: Predictive Modeling for Heart Attack Risk Assessment in Indonesia
 
-### “Leveraging AI to detect heart attack risk early and support preventive healthcare decisions.”
+##### “Leveraging AI to detect heart attack risk early and support preventive healthcare decisions.”
+
 
 
 ## 📌 Project Overview:
@@ -29,6 +30,7 @@ To build a supervised classification model that accurately identifies individual
 ##### 📁 Dataset Details
 
 
+
 | Attribute           | Value                                                                          |
 | ------------------- | ------------------------------------------------------------------------------ |
 | **Name**            | Heart Attack Prediction in Indonesia                                           |
@@ -41,28 +43,33 @@ To build a supervised classification model that accurately identifies individual
 
 
 
+
 ### 🛠️ Stage 1: Dataset Collection
 
-* Imported CSV data using pandas
+
+* Imported CSV data using pandas. Checked the head().
 
 <img width="978" height="387" alt="image" src="https://github.com/user-attachments/assets/0fc510fc-ad21-4a32-ad4f-01bb58e7a0ea" />
 
 
+* Explored structure using .info(),shape(), column names.
 
-Explored structure using .info(), .head(), and .shape()
+<img width="978" height="147" alt="image" src="https://github.com/user-attachments/assets/bbe19220-78f5-41cc-bd89-8459d307bc76" />
+
+<img width="978" height="511" alt="image" src="https://github.com/user-attachments/assets/4cb5a970-3c04-4a80-8672-daf4bc3d4a26" />
+
+<img width="978" height="607" alt="image" src="https://github.com/user-attachments/assets/5f83f336-5df6-4410-b939-30bcf496e015" />
 
 Identified 28 features including demographic, clinical, and lifestyle variables
 
-Removed duplicate records
 
-🔧 Stage 1: Dataset Collection
-Imported the dataset using pandas
+* Removed duplicate records
 
-Inspected column names, data types, and missing values
-
-Checked for duplicate records
+<img width="978" height="140" alt="image" src="https://github.com/user-attachments/assets/97ac31c3-e767-4e13-a587-463e9e503345" />
 
 Verified structure and feature relevance
+
+
 
 🧼 Stage 2: Preprocessing & Cleaning
 🔹 Handling Missing Values
