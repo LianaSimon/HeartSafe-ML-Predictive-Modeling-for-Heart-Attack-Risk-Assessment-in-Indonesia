@@ -71,73 +71,144 @@ Verified structure and feature relevance
 
 
 
-🧼 Stage 2: Preprocessing & Cleaning
-🔹 Handling Missing Values
-Missing values in alcohol_consumption (~60%) were filled with "Unknown" to retain behavioral information
-
-No other columns had significant missing data
-
-🔹 Categorical Encoding
-Identified object-type columns and applied one-hot encoding
-
-drop_first=True used to prevent multicollinearity
-
-🔹 Outlier Detection
-Used boxplots to visualize potential outliers in all numeric features
-
-No removal was applied due to the clinical significance of outliers in healthcare (e.g., high blood pressure may indicate actual heart attack risk)
-
-🔹 Feature Scaling
-Applied StandardScaler only to numeric features using a Pipeline with ColumnTransformer
-
-This standardization ensures consistent scale for models sensitive to feature magnitude
-
-🔹 Train/Test Split
-Split data into 80% training and 20% testing sets
-
-Used stratified sampling to maintain class balance in heart_attack.
+### 🧹 Stage 2: Preprocessing & Cleaning
 
 
-🚀 Stage 3: Model Building & Evaluation — Overview
+✅ Missing Values
 
-✅ Objective:
-Build and evaluate multiple classification models to predict heart attack risk based on the preprocessed healthcare data.
+* alcohol_consumption had ~60% missing values → filled with 'Unknown'
+
+* Preserved structure and retained potential behavioral insight
+
+<img width="978" height="413" alt="image" src="https://github.com/user-attachments/assets/6139aef3-fc0f-4fdd-87d8-4ac50310d9f0" />
+
+<img width="978" height="537" alt="image" src="https://github.com/user-attachments/assets/5bd0b185-43f3-4298-bc34-892e24228c84" />
 
 
-✅ ML Workflow Plan
-🔹 1. Models to Implement:
-We'll use these popular supervised classification algorithms:
+✅ Categorical Encoding
 
-Logistic Regression
+* One-hot encoded all categorical variables
 
-Decision Tree Classifier
+* Used drop_first=True to prevent multicollinearity
 
-Random Forest Classifier
+<img width="978" height="508" alt="image" src="https://github.com/user-attachments/assets/5f811288-627c-480d-a485-e5e2b2e93576" />
 
-Support Vector Machine (SVM)
 
-Gradient Boosting (e.g., XGBoost or GradientBoostingClassifier)
+✅ Outlier Analysis
 
-🔹 2. Evaluation Metrics:
-We'll compare the models using:
+* Visualized numeric features with boxplots
 
-Accuracy
+* Outliers not removed, as they may indicate true medical risks (e.g., high blood pressure)
 
-Precision
+<img width="978" height="477" alt="image" src="https://github.com/user-attachments/assets/69e76834-c3aa-4dc5-9d5d-b1ccec8f0493" />
 
-Recall
+<img width="978" height="452" alt="image" src="https://github.com/user-attachments/assets/709ea2b7-919a-427b-8344-2867057141b9" />
 
-F1-score
+<img width="978" height="459" alt="image" src="https://github.com/user-attachments/assets/0dc81225-b3f7-403a-98e8-a520641439f7" />
 
-ROC-AUC
+<img width="978" height="450" alt="image" src="https://github.com/user-attachments/assets/d3e7a7ba-2799-4a19-9880-d38c346f7b4e" />
 
-🔹 3. Best Model Selection:
-After evaluating all models, we’ll:
+<img width="978" height="452" alt="image" src="https://github.com/user-attachments/assets/266c1427-9608-4f2c-9202-81bba9ac123c" />
 
-Compare them side-by-side in a summary table
+<img width="978" height="454" alt="image" src="https://github.com/user-attachments/assets/54f4438d-2a41-4c25-a86b-fa93a1b7e43c" />
 
-Select the best-performing one based on ROC-AUC and F1-score
+<img width="978" height="448" alt="image" src="https://github.com/user-attachments/assets/8744bc27-7e2a-46f8-bd31-13c664939478" />
 
-Use it for prediction on test data
+<img width="978" height="441" alt="image" src="https://github.com/user-attachments/assets/dc1e192a-ac63-4b9f-a9d1-01a9c09b4869" />
+
+<img width="978" height="474" alt="image" src="https://github.com/user-attachments/assets/50599d4a-f0e1-4807-bfd3-5de9d0e072d7" />
+
+<img width="978" height="303" alt="image" src="https://github.com/user-attachments/assets/26c3fea8-25a2-4e0b-879b-2d888421fcd2" />
+
+<img width="978" height="612" alt="image" src="https://github.com/user-attachments/assets/a7a3ac6f-abba-4fcc-b29e-e09a73b62c6f" />
+
+
+✅ Feature Scaling
+
+* Standardized numeric features using StandardScaler
+
+<img width="978" height="210" alt="image" src="https://github.com/user-attachments/assets/28d0ed75-f37e-45ac-aac4-d9ae5f415034" />
+
+
+* Implemented using a Pipeline + ColumnTransformer
+
+<img width="978" height="320" alt="image" src="https://github.com/user-attachments/assets/ed48b60f-7375-4421-84c2-3e1d2a878c72" />
+
+
+✅ Train/Test Split
+
+* Used train_test_split() with stratify=y to maintain class balance
+
+* 80% training / 20% testing
+
+<img width="978" height="229" alt="image" src="https://github.com/user-attachments/assets/414261ac-068b-4de2-b2ff-3928d692fb34" />
+
+
+
+### 🤖 Stage 3: Machine Learning Modeling & Evaluation
+
+Models Implemented:
+
+
+* Logistic Regression
+
+* Decision Tree Classifier
+
+* Random Forest Classifier
+
+* Support Vector Machine (SVM)
+
+* Gradient Boosting Classifier
+
+
+
+Evaluation Metrics:
+
+
+* Accuracy
+
+* Precision
+
+* Recall
+
+* F1-score
+
+* ROC-AUC Score
+
+<img width="978" height="428" alt="image" src="https://github.com/user-attachments/assets/ea1b93b2-5b0c-4c55-a89f-2332b13e298d" />
+
+  
+*****
+Model Evaluation Example Output
+Classification Report (Precision, Recall, F1-score)
+
+Confusion Matrix
+
+ROC-AUC Score for each model
+
+Summary comparison table (sorted by ROC-AUC)
+
+🔍 Sample Model Performance Summary (example)
+Model	ROC-AUC
+Random Forest	0.92
+Gradient Boosting	0.91
+Logistic Regression	0.88
+SVM	0.87
+Decision Tree	0.84
+
+✅ Project Status
+✅ Data collected and cleaned
+
+✅ ML models built and compared
+
+🔄 Next: Hyperparameter tuning, model selection, and deployment
+
+💬 Key Learnings
+Healthcare data often includes meaningful outliers — not just noise
+
+Pipelines make preprocessing reproducible and scalable
+
+One-hot encoding and stratified splitting are crucial for classification
+
 
 
