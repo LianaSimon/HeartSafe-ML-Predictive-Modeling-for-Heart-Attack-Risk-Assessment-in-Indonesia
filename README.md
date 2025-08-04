@@ -1,38 +1,59 @@
-#🫀 HeartSafe ML: Predictive Modeling for Heart Attack Risk Assessment in Indonesia
+# 🫀 HeartSafe ML: Predictive Modeling for Heart Attack Risk Assessment in Indonesia
 
 ### “Leveraging AI to detect heart attack risk early and support preventive healthcare decisions.”
 
 
-📌 Project Overview
-This project aims to develop a machine learning model that can accurately predict the risk of a heart attack using a rich healthcare dataset collected from patients in Indonesia. By leveraging clinical, lifestyle, and demographic indicators, we aim to identify at-risk individuals and support early intervention strategies in the healthcare system.
+## 📌 Project Overview:
+
+This project aims to develop a machine learning model that can accurately predict the risk of a heart attack using a rich healthcare dataset collected from patients in Indonesia. By leveraging clinical, lifestyle, and demographic indicators, we aim to identify at-risk individuals and support early intervention strategies in the healthcare system. With over 158,000 records and 28 features, this end-to-end solution includes data cleaning, preprocessing, outlier analysis, feature scaling, model training, evaluation, and performance comparison. The goal is to assist healthcare professionals in identifying high-risk individuals for timely intervention.
 
 
 
-🎯 Objectives
-Clean and preprocess a real-world healthcare dataset
+## 🎯 Objectives:
 
-Handle missing values and outliers appropriately
-
-Encode categorical variables and scale numeric features
-
-Split the dataset into training and testing subsets
-
-Prepare the data for machine learning modeling (Stage 3)
+To build a supervised classification model that accurately identifies individuals at risk of heart attack using demographic, lifestyle, and clinical health indicators.
 
 
+* Clean and preprocess a real-world healthcare dataset
 
-📁 Dataset
+* Handle missing values and outliers appropriately
 
-Source: DeepDataLake Dataset ID 55
+* Encode categorical variables and scale numeric features
 
-Name: Heart Attack Prediction in Indonesia
+* Split the dataset into training and testing subsets
 
-Rows: 158,355
+* Prepare the data for machine learning modeling 
 
-Columns: 28 (including the target heart_attack)
 
-Type: Classification (0 = No Heart Attack, 1 = Heart Attack)
 
+##### 📁 Dataset Details
+
+
+| Attribute           | Value                                                                          |
+| ------------------- | ------------------------------------------------------------------------------ |
+| **Name**            | Heart Attack Prediction in Indonesia                                           |
+| **Source**          | [DeepDataLake Dataset #55](https://deepdatalake.com/details.php?dataset_id=55) |
+| **Rows**            | 158,355                                                                        |
+| **Columns**         | 28 (features + target)                                                         |
+| **Target Variable** | `heart_attack` (0 = No, 1 = Yes)                                               |
+| **Type**            | Supervised Classification                                                      |
+
+
+
+
+### 🛠️ Stage 1: Dataset Collection
+
+* Imported CSV data using pandas
+
+<img width="978" height="387" alt="image" src="https://github.com/user-attachments/assets/0fc510fc-ad21-4a32-ad4f-01bb58e7a0ea" />
+
+
+
+Explored structure using .info(), .head(), and .shape()
+
+Identified 28 features including demographic, clinical, and lifestyle variables
+
+Removed duplicate records
 
 🔧 Stage 1: Dataset Collection
 Imported the dataset using pandas
@@ -67,10 +88,49 @@ This standardization ensures consistent scale for models sensitive to feature ma
 🔹 Train/Test Split
 Split data into 80% training and 20% testing sets
 
-Used stratified sampling to maintain class balance in heart_attack
+Used stratified sampling to maintain class balance in heart_attack.
 
-✅ Current Project Status
-✔ Preprocessing complete
-⏳ Ready to proceed to Stage 3: Machine Learning Modeling & Evaluation
+
+🚀 Stage 3: Model Building & Evaluation — Overview
+
+✅ Objective:
+Build and evaluate multiple classification models to predict heart attack risk based on the preprocessed healthcare data.
+
+
+✅ ML Workflow Plan
+🔹 1. Models to Implement:
+We'll use these popular supervised classification algorithms:
+
+Logistic Regression
+
+Decision Tree Classifier
+
+Random Forest Classifier
+
+Support Vector Machine (SVM)
+
+Gradient Boosting (e.g., XGBoost or GradientBoostingClassifier)
+
+🔹 2. Evaluation Metrics:
+We'll compare the models using:
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-score
+
+ROC-AUC
+
+🔹 3. Best Model Selection:
+After evaluating all models, we’ll:
+
+Compare them side-by-side in a summary table
+
+Select the best-performing one based on ROC-AUC and F1-score
+
+Use it for prediction on test data
 
 
