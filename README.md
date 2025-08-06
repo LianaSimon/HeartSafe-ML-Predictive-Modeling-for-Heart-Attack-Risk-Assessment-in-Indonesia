@@ -188,20 +188,48 @@ ROC-AUC Score for each model
 
 Summary comparison table (sorted by ROC-AUC)
 
-🔍 Sample Model Performance Summary (example)
+
+🔍 Model Performance Summary
+
 Model	ROC-AUC
-Random Forest	0.92
-Gradient Boosting	0.91
-Logistic Regression	0.88
-SVM	0.87
-Decision Tree	0.84
+
+
+<img width="946" height="1041" alt="image" src="https://github.com/user-attachments/assets/f9165ed0-58f3-4160-b316-af85dacebdd5" />
+
 
 ✅ Project Status
+
 ✅ Data collected and cleaned
 
 ✅ ML models built and compared
 
-🔄 Next: Hyperparameter tuning, model selection, and deployment
+
+✅ Summary of Current Results
+
+
+### 🔍 Best Model Summary
+
+After evaluating 5 ML models, **Gradient Boosting Classifier** emerged as the best with a ROC-AUC of **0.7966**.
+
+Further steps included hyperparameter tuning using GridSearchCV, and the final model was saved using Joblib for deployment.
+
+| Model               | ROC-AUC |
+|--------------------|---------|
+| Gradient Boosting  | 0.7966  |
+| Random Forest      | 0.7876  |
+| Logistic Regression| 0.7817  |
+| SVM                | 0.7673  |
+| Decision Tree      | 0.6288  |
+
+
+
+### Hyperparameter Tuning (GridSearchCV)
+
+Fine-tune the top model (Gradient Boosting) to improve accuracy and AUC:
+
+
+<img width="978" height="342" alt="image" src="https://github.com/user-attachments/assets/703a9855-0a82-4fd9-91d7-81dea5e1d423" />
+
 
 💬 Key Learnings
 Healthcare data often includes meaningful outliers — not just noise
@@ -209,6 +237,48 @@ Healthcare data often includes meaningful outliers — not just noise
 Pipelines make preprocessing reproducible and scalable
 
 One-hot encoding and stratified splitting are crucial for classification
+
+
+
+
+### ✅ Conclusion
+
+
+This project demonstrates the power of machine learning in predicting heart attack risks using real-world healthcare data from Indonesia. Through systematic data preprocessing, thoughtful handling of outliers, and comparative analysis of classification models, we identified Gradient Boosting Classifier as the best-performing algorithm with a ROC-AUC score of 0.7966.
+
+Although the model achieved promising performance, further improvements could be made by:
+
+Acquiring more balanced or diverse data
+
+Performing advanced feature engineering
+
+Integrating domain knowledge from cardiologists or healthcare professionals
+
+This project not only showcases the practical application of ML in healthcare but also emphasizes the importance of ethical data handling and clinical context, especially when working with sensitive data.
+
+
+
+
+### 📌 Key Takeaways
+
+
+🧼 Data preprocessing is critical for model success, especially in healthcare domains.
+
+📊 Outliers are not always bad — in medical data, they can be life-saving indicators.
+
+🤖 Gradient Boosting proved to be the most effective classifier in this use case.
+
+🔁 Pipelines and modular coding make machine learning workflows cleaner and reusable.
+
+
+### 🙌 Acknowledgements
+
+* Dataset sourced from DeepDataLake
+
+* Developed as part of a Data Science & Machine Learning training program
+
+* Special thanks to instructors, reviewers, and the community for guidance
+
 
 
 
