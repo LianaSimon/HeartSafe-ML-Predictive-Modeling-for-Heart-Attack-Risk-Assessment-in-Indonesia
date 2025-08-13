@@ -239,6 +239,61 @@ Pipelines make preprocessing reproducible and scalable
 One-hot encoding and stratified splitting are crucial for classification
 
 
+### 🔮 Stage 4: Predictions from Best Model
+
+We used the best-performing model (**Gradient Boosting Classifier**) to:
+1. Predict the probability of heart attack risk for test patients.
+2. Display predictions for a few random patients.
+3. Perform a "What-if" analysis for a hypothetical patient.
+
+These predictions demonstrate how the trained model can be applied in a real-world healthcare setting.
+
+
+<img width="1160" height="657" alt="image" src="https://github.com/user-attachments/assets/9213ea22-f5b1-4b76-9360-e1378d698ec0" />
+
+
+
+### 📊 Stage 5: Visualizing the Tuned Model's Performance
+
+After performing **hyperparameter tuning** using `GridSearchCV` on the Gradient Boosting Classifier,  
+we evaluate the **best model** on the test dataset using various visual and statistical tools.
+
+### Visualizations & Metrics:
+1. **Confusion Matrix Heatmap** –  
+   Shows the distribution of correct and incorrect predictions for each class,  
+   helping us understand the model's strengths and weaknesses.
+
+2. **ROC Curve & AUC Score** –  
+   The ROC curve plots the True Positive Rate (TPR) against the False Positive Rate (FPR)  
+   at different classification thresholds. The **AUC score** summarizes the model's ability  
+   to distinguish between classes.
+
+3. **Classification Report** –  
+   Provides detailed precision, recall, F1-score, and support for both classes.
+
+These evaluations give a deeper understanding of how well our tuned model performs,  
+both in terms of accuracy and its ability to correctly identify high-risk patients.
+
+
+<img width="1142" height="752" alt="image" src="https://github.com/user-attachments/assets/bdf5b006-43de-4146-8d5f-f77bcd3e7a1c" />
+
+
+<img width="682" height="647" alt="image" src="https://github.com/user-attachments/assets/3a3c31c9-ed1c-4747-a3d7-98dbc274e549" />
+
+
+### 🩺 Stage 6: Feature Importance Analysis
+
+Understanding **which features influence the model's predictions** is crucial in healthcare applications.  
+For our tuned **Gradient Boosting Classifier**, we can extract the **feature importance scores**,  
+which indicate how much each variable contributed to the decision-making process.
+
+### Why Feature Importance Matters:
+- **Interpretability** – Helps medical professionals understand the factors influencing predictions.
+- **Trust** – Clinicians and patients are more likely to trust AI models when they can see which factors drive results.
+- **Data-driven Decisions** – Highlights the most critical health indicators for preventive action.
+
+In this project, the most important features will tell us **which lifestyle habits, demographics,  
+or health metrics are the strongest predictors of heart attack risk** in the given dataset.
 
 
 ### ✅ Conclusion
